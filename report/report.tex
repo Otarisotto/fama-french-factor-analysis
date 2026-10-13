@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{Analyse factorielle Fama-French par régression}
+\author{Ton Nom}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Résumé en quelques lignes : question, données, méthode, principal résultat.
+\end{abstract}
+
+\section{Introduction}
+Question posée et motivation.
+
+\section{Cadre théorique}
+\subsection{Le modèle linéaire}
+Pour un actif $i$, on pose
+\[
+  r_{i,t} - r_{f,t} = \alpha_i + \boldsymbol{\beta}_i^{\top} \mathbf{F}_t + \varepsilon_{i,t}.
+\]
+
+\subsection{Estimateur des moindres carrés}
+Avec $y \in \mathbb{R}^T$ et $X \in \mathbb{R}^{T \times (k+1)}$ de rang plein,
+\[
+  \hat{\theta} = \arg\min_{\theta} \lVert y - X\theta \rVert^2 = (X^{\top}X)^{-1}X^{\top}y.
+\]
+\emph{À compléter : dérivation par les équations normales, interprétation géométrique (projection orthogonale).}
+
+\subsection{Inférence robuste}
+Sous hétéroscédasticité et autocorrélation, la variance de $\hat{\theta}$ est estimée par Newey-West :
+\[
+  \widehat{\mathrm{Var}}(\hat{\theta}) = (X^{\top}X)^{-1}\,\hat{S}\,(X^{\top}X)^{-1}.
+\]
+\emph{À compléter : définition de $\hat{S}$ avec poids de Bartlett.}
+
+\section{Données}
+Description des facteurs, de l'échantillon d'actifs, de la période.
+
+\section{Résultats}
+\subsection{Comparaison CAPM / FF3 / FF5}
+\subsection{Stabilité des coefficients}
+
+\section{Limites}
+Biais de survie, période, coûts de transaction, tests multiples.
+
+\section{Conclusion}
+
+\end{document}
